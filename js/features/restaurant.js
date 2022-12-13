@@ -25,7 +25,10 @@ const possibleDeliveryTypesOdd = [
 
 const possibleDeliveryTypesEven = [
     'Auswärts',
+    'Abholen',
 ];
+
+
 
 const fakeRestaurantNames = [
     "The Hungry Asian",
@@ -66,6 +69,7 @@ const fakeRestaurantNames = [
 ];
 
 const fakeRestaurants = [];
+
 for (let i = 0; i < fakeRestaurantNames.length; i++) {
     const fakeRestaurant = {
         name: fakeRestaurantNames[i],

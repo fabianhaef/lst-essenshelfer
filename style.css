@@ -10920,6 +10920,16 @@ a {
   border-radius: 0px;
   color: #0d0c0c;
 }
+.btn-primary:active, .recommendations__content .card-body .btn:active {
+  background-color: rgba(255, 237, 0, 0.7) !important;
+  border-color: rgba(255, 237, 0, 0.5) !important;
+  color: #0d0c0c !important;
+}
+.btn-primary:hover, .recommendations__content .card-body .btn:hover {
+  background-color: rgba(255, 237, 0, 0.3) !important;
+  border-color: rgba(255, 237, 0, 0.5) !important;
+  color: #0d0c0c !important;
+}
 
 .food-helper {
   margin-bottom: 32px;

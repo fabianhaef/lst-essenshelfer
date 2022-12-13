@@ -1,21 +1,33 @@
-import Flickity from 'flickity'
+const domSliderImage = document.querySelector('.slider-image')
 
-const slider = document.querySelector('.slider');
+const sliderImages = [
+  {
+    src: '../img/stock1.jpeg',
+  },
+  {
+    src: '../img/stock2.jpeg',
+  },
+  {
+    src: '../img/stock3.jpeg',
+  },
+  {
+    src: '../img/stock4.jpeg',
+  },
+]
 
-if (slider !== null) {
-  const flkty = new Flickity(slider, {
-    autoPlay: 3000,
-    draggable: true,
-    cellAlign: 'left',
-    contain: true,
-    freeScroll: false,
-    wrapAround: true,
-    prevNextButtons: true,
-    pageDots: false,
-  });
+let currentIndex = 0;
 
-  setTimeout(() => {
-    flkty.resize();
-    flkty.reposition();
-  }, 3000)
+const replaceSliderImage = () => {
+  domSliderImage.src = sliderImages[currentIndex].src;
 }
+
+
+setTimeout(() => {  
+  setInterval(() => {
+    currentIndex++;
+    if (currentIndex >= sliderImages.length) {
+      currentIndex = 0;
+    }
+    replaceSliderImage();
+  }, 5000);
+} , 5000);

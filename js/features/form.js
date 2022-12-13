@@ -32,7 +32,16 @@ form.addEventListener('submit', (e) => {
     const foodCategory = form.querySelector('select[name=category]').value;
 
     // set remmoncationdations container to active
-    recommendationsContainer.classList.add('recommendations--active');
+
+    if (recommendationsContainer.classList.contains('recommendations--active')) {
+        recommendationsContainer.classList.remove('recommendations--active');
+        setTimeout(() => {
+            console.log("Waiting")
+        }, 5000)
+        recommendationsContainer.classList.add('recommendations--active');
+    } else {
+        recommendationsContainer.classList.add('recommendations--active');
+    }
 
     // update dom elements
     reccType.innerHTML = deliveryType;

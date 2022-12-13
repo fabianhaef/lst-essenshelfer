@@ -3,4 +3,16 @@
   border-color: $color--primary;
   border-radius: 0px;
   color: $color--black;
+
+  &:active {
+    background-color: rgb(255, 237,0, 0.7) !important;
+    border-color: rgb(255, 237,0, 0.5) !important;
+    color: $color--black !important;
+  }
+
+  &:hover {
+    background-color: rgb(255, 237,0, 0.3) !important;
+    border-color: rgb(255, 237,0, 0.5) !important;
+    color: $color--black !important;
+  }
 }
