@@ -10936,7 +10936,7 @@ a {
 }
 
 .btn-secondary {
-  background-color: transparent;
+  background-color: transparent !important;
   border-color: #ffed00;
   border-radius: 0px;
   color: rgb(51, 71, 86);

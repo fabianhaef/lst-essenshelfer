@@ -11,7 +11,10 @@ export const template = (restaurant) => `
                 ${restaurant.city}, ${restaurant.country}
             </p>
 
-            <a href="https://www.google.ch/maps/search/${restaurant.address}" target="_blank" class="btn btn-primary">Zur Karte</a>
+                <div class="button-container">
+                    <a href="${restaurant.url}" target="_blank" class="btn btn-primary">Zur Webseite</a>
+                    <a href="https://www.google.ch/maps/search/${restaurant.address}" target="_blank" class="btn btn-secondary">Zur Karte</a>    
+                </div>
             </div>
         </div>
     </div>`;

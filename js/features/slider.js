@@ -24,7 +24,7 @@ const replaceSliderImage = () => {
 
 setTimeout(() => {  
   setInterval(() => {
-    currentIndex++;
+    ++currentIndex;
     if (currentIndex >= sliderImages.length) {
       currentIndex = 0;
     }
