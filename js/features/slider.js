@@ -29,5 +29,5 @@ setTimeout(() => {
       currentIndex = 0;
     }
     replaceSliderImage();
-  }, 5000);
-} , 5000);
+  }, 4000);
+} , 4000);

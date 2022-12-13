@@ -5,7 +5,8 @@
 
   &__name {
     @extend .text__label;
+    font-weight: 900;
   }
 
-  margin-bottom: 20px;
+  margin-bottom: calc(20px * 4);
 }

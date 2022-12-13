@@ -6,7 +6,7 @@
   }
 
   &__label {
-    @include responsive-font(2vw, 20px, 40px, 32px);
+    @include responsive-font(2vw, 18px, 36px, 26px);
     font-weight: 500;
     color: $color--black;
   }

@@ -1,28 +1,14 @@
 // import restaurants from restaurant.js
 import { restaurants } from './restaurant';
+import { template } from './templateLiteral';
 
 // dom elements
 const form = document.querySelector('form');
 const recommendationsContainer = document.querySelector('.recommendations');
-const reccType = document.querySelector('.recommendations__type');
-const reccCategory = document.querySelector('.recommendations__category');
+const submitButton = document.querySelector('.btn-primary');
 
-// html tempalte literal
-const template = (restaurant) => `
-    <div class="col col-sm-2 col-md-4 col-lg-3 mb-4">
-        <div class="card">
-            <img src="${restaurant.image}" class="card-img-top" alt="${restaurant.name}">
-            <div class="card-body">
-            <h5 class="card-title">${restaurant.name}</h5>
-            <p class="card-text">${restaurant.category}</p>
-            <a href="${restaurant.url}" target="_blank" class="btn btn-primary">Zum Restaurant</a>
-            </div>
-        </div>
-    </div>`
-    ;
-
-// add event listener to form 
-form.addEventListener('submit', (e) => {
+// add event listener to the form 
+submitButton.addEventListener('click', (e) => {
     e.preventDefault();
 
     // get checked radio button with name type
@@ -32,21 +18,14 @@ form.addEventListener('submit', (e) => {
     const foodCategory = form.querySelector('select[name=category]').value;
 
     // set remmoncationdations container to active
-
     if (recommendationsContainer.classList.contains('recommendations--active')) {
         recommendationsContainer.classList.remove('recommendations--active');
         setTimeout(() => {
-            console.log("Waiting")
-        }, 5000)
-        recommendationsContainer.classList.add('recommendations--active');
+            recommendationsContainer.classList.add('recommendations--active');
+        }, 500)
     } else {
         recommendationsContainer.classList.add('recommendations--active');
     }
-
-    // update dom elements
-    reccType.innerHTML = deliveryType;
-    reccCategory.innerHTML = foodCategory;
-
 
     // get restaurants that match the selected options
     const filteredRestaurants = restaurants.filter((restaurant) => {
@@ -57,22 +36,17 @@ form.addEventListener('submit', (e) => {
 
     // update dom with filtered restaurants and template literal if filteredRestaurants is not empty
     if (filteredRestaurants.length > 0) {
+        // select one random restaurant from filteredRestaurants
+        const randomRestaurant = filteredRestaurants[Math.floor(Math.random() * filteredRestaurants.length)];
+    
+        console.log(randomRestaurant)
+
+
+        // update dom with filtered restaurants and template literal
         const filteredRestaurantsContainer = document.querySelector('.recommendations__content');
-        filteredRestaurantsContainer.innerHTML = filteredRestaurants.map((restaurant) => template(restaurant)).join('');
+        filteredRestaurantsContainer.innerHTML = template(randomRestaurant);
     } else {
         const filteredRestaurantsContainer = document.querySelector('.recommendations__content');
-        filteredRestaurantsContainer.innerHTML = `<p>Leider keine Restaurants gefunden</p>`;
+        filteredRestaurantsContainer.innerHTML = `<p>Leider keine Restaurants gefunden!</p><br><p>Versuche es doch nochmals mit anderen Filteroptionen.</p>`;
     }
 });
-
-
-
-// write function to save foodCategory and deliveryType to local storage
-function saveToLocalStorage(foodCategory, deliveryType) {
-    localStorage.setItem('foodCategory', foodCategory);
-    localStorage.setItem('deliveryType', deliveryType);
-}
-
-
-
-

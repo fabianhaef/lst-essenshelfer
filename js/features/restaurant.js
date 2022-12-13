@@ -22,13 +22,10 @@ const possibleDeliveryTypesOdd = [
     'Auswärts',
 ];
 
-
 const possibleDeliveryTypesEven = [
     'Auswärts',
     'Abholen',
 ];
-
-
 
 const fakeRestaurantNames = [
     "The Hungry Asian",
@@ -77,7 +74,12 @@ for (let i = 0; i < fakeRestaurantNames.length; i++) {
         deliveryType: i % 2 === 0 ? possibleDeliveryTypesEven : possibleDeliveryTypesOdd,
         image: faker.image.abstract(640, 640, true),
         url: faker.internet.domainName(),
+        address: faker.address.streetAddress(),
+        city: faker.address.city(),
+        zip: faker.address.zipCode(),
+        country: faker.address.country(),
     };
+
     fakeRestaurants.push(fakeRestaurant);
 }
 

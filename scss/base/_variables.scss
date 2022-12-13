@@ -1,6 +1,6 @@
 $color--primary: #ffed00;
 $color--white: rgb(242, 236, 236);
-$color--black: #0d0c0c;
+$color--black: rgb(51, 71, 86);;
 
 
 $gutter-large: 32px;
@@ -8,6 +8,22 @@ $gutter-medium: 20px;
 $gutter-small: 10px;
 
 
+// Responsive breakpoints
+$break-tiny: "576px";
+$break-small: "778px";
+$break-medium: "992px";
+$break-large: "1200px";
+$break-huge: "1400px";
+$break-full: "1680px";
 
-
-
+$breakpoints: (
+  tiny : 'only screen and (min-width: #{$break-tiny})',
+  small : 'only screen and (min-width: #{$break-small})',
+  medium : 'only screen and (min-width: #{$break-medium})',
+  large : 'only screen and (min-width: #{$break-large})',
+  huge : 'only screen and (min-width: #{$break-huge})',
+  full : 'only screen and (min-width: #{$break-full})',
+  landscape: 'only screen and (orientation:landscape)',
+  portrait : 'only screen and (orientation:portrait)',
+  retina : 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)',
+);
