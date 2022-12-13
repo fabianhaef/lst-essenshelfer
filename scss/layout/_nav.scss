@@ -1,0 +1,11 @@
+.navbar {
+  &-brand {
+    font-weight: bold;
+  }
+
+  &__name {
+    @extend .text__label;
+  }
+
+  margin-bottom: 20px;
+}

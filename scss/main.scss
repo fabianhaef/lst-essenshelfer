@@ -1,0 +1,24 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "flickity/dist/flickity.css";
+
+
+//utils
+@import "./utils/mixins";
+
+// base
+@import "./base/variables";
+@import "./base/typography";
+@import "./base/reset";
+@import "./base/text";
+@import "./base/image";
+
+//layout
+@import "./layout/nav";
+@import "./layout/body";
+
+
+// components
+@import "./components/buttons";
+@import "./components/foodHelper";
+@import "./components/recommendations";
+

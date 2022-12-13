@@ -1,0 +1,34 @@
+.recommendations {
+  margin-bottom: $gutter-large;
+  opacity: 0;
+
+  &--active {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+  }
+
+  &__title {
+    @extend .text__title;
+  }
+
+  &__text {
+    @extend .text__label;
+  }
+
+
+  &__content {
+    .card {
+      border-radius: 0px;
+
+      &-img-top {
+        border-radius: 0px;
+      }
+
+      &-body {
+        .btn {
+          @extend .btn-primary;          
+        }
+      }
+    }
+  }
+}

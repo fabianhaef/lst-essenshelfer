@@ -1,0 +1,64 @@
+.food-helper {
+  //  height: 100vh;
+  margin-bottom: $gutter-large;
+
+  &__title {
+    @extend .text__title;
+  } 
+
+  &__label {
+    @extend .text__label;
+  }
+
+  .btn-primary {
+    @extend .btn-primary;
+  }
+
+
+  // form styles
+  &__form {
+    &--type {
+      .form-check-input {
+        border-radius: 0px;
+        outline: none !important;
+      } 
+
+      .form-check-input:checked {
+        background-color: $color--primary;
+        border-color: $color--primary;
+      }
+
+      .form-check-input:focus {
+        box-shadow: 0 0 0 0.25rem rgba(253, 237, 13, 0.25)
+      }
+
+      .form-check-label {
+        @extend .text__input; 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        .food-helper__icon {
+          margin-left: $gutter-small;
+        }
+      }
+    } 
+
+    &--category {
+      .form-select {
+        border-radius: 0px;
+        color: $color--black;
+
+        option {
+          color: $color--black;
+        }
+      }
+
+      .form-select:focus {
+        border-color: $color--primary;
+        box-shadow: 0 0 0 0.25rem rgba(253, 237, 13, 0.25)
+      } 
+    }
+  }
+}
